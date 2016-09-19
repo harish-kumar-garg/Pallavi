@@ -8,9 +8,9 @@ sudo apt-get -y install jenkins
 #!bin/bash
 sudo su
 cd
-wget https://raw.githubusercontent.com/arijitbardhan/myscripts/master/install-mysql.sh?_sm_au_=itHP6JqWbQ1F7f6Q
+wget https://raw.githubusercontent.com/pallaviks/Pallavi/master/mysqlforsonar.sh?_sm_au_=iMV5K7q5HStbDZqH
 #installing mysql
-sh install-mysql.sh?_sm_au_=itHP6JqWbQ1F7f6Q
+sh mysqlforsonar.sh?_sm_au_=iMV5K7q5HStbDZqH
 wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-5.6.zip
 apt-get install -y unzip
 unzip sonarqube-5.6.zip
