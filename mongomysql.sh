@@ -31,17 +31,17 @@ sudo apt-get update
 #export DEBIAN_FRONTEND=noninteractive
 
 #another way of installing mysql server in a Non-Interactive mode
-echo "mysql-server-5.6 mysql-server/root_password password Welcome123" | sudo debconf-set-selections 
-echo "mysql-server-5.6 mysql-server/root_password_again password Welcome123" | sudo debconf-set-selections 
+echo "mysql-server-5.6 mysql-server/root_password password $mysqlPassword" | sudo debconf-set-selections 
+echo "mysql-server-5.6 mysql-server/root_password_again password $mysqlPassword" | sudo debconf-set-selections 
 sudo apt-get install mysql-server
 sudo mysql_secure_installation 
 #install mysql-server 5.6
 
 #set the password
-sudo mysqladmin -u root password Welcome123   #without -p means here the initial password is empty
+sudo mysqladmin -u root password $mysqlPassword   #without -p means here the initial password is empty
 
 #alternative update mysql root password method
-sudo mysql -u root -e "set password for 'root'@'localhost' = PASSWORD('Welcome123')"
+sudo mysql -u root -e "set password for 'root'@'localhost' = PASSWORD('$mysqlPassword')"
 #without -p here means the initial password is empty
 
 sudo service mysql restart
