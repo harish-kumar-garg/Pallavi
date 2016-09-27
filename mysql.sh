@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mysqlPassword='Welcome123'
+mysqlPassword="Welcome123"
 sudo apt-get update
 #no password prompt while installing mysql server
 #export DEBIAN_FRONTEND=noninteractive
