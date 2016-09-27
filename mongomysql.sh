@@ -24,7 +24,7 @@ sudo apt-get install -y mongodb-org
 
 
 
-#!/bin/bash
+# !/bin/bash
 
 mysqlPassword="Welcome123"
 sudo apt-get update
@@ -46,5 +46,4 @@ sudo apt-get -y install mysql-server-5.6
 #without -p here means the initial password is empty
 
 #sudo service mysql restart
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+
