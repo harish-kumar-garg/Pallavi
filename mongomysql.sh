@@ -1,3 +1,4 @@
+
 # Configure mongodb.list file with the correct location
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
@@ -21,3 +22,29 @@ sudo apt-get install -y mongodb-org
 # sudo service mongod restart
 
 
+
+
+#!/bin/bash
+
+mysqlPassword="Welcome123"
+sudo apt-get update
+#no password prompt while installing mysql server
+#export DEBIAN_FRONTEND=noninteractive
+
+#another way of installing mysql server in a Non-Interactive mode
+echo "mysql-server-5.6 mysql-server/root_password password mysqlPassword" | sudo debconf-set-selections 
+echo "mysql-server-5.6 mysql-server/root_password_again password mysqlPassword" | sudo debconf-set-selections 
+
+#install mysql-server 5.6
+sudo apt-get -y install mysql-server-5.6
+
+#set the password
+#sudo mysqladmin -u root password "$mysqlPassword"   #without -p means here the initial password is empty
+
+#alternative update mysql root password method
+#sudo mysql -u root -e "set password for 'root'@'localhost' = PASSWORD('$mysqlPassword')"
+#without -p here means the initial password is empty
+
+#sudo service mysql restart
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
