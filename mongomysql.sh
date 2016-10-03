@@ -46,4 +46,5 @@ sudo apt-get -y install mysql-server-5.6
 #without -p here means the initial password is empty
 
 #sudo service mysql restart
+# ****************
 
